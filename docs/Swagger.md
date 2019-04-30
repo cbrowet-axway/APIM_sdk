@@ -1,0 +1,45 @@
+# Swagger
+
+## Properties
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**id** | **str** | An identifier | [optional] 
+**title** | **str** | Schema title | [optional] 
+**description** | **str** | Description of the Schema | [optional] 
+**format** | **str** | The format ex: int32, int64, float, double, byte, binary, date, date-time or password | [optional] 
+**required** | **list[str]** | Specifies if the parameter is required | [optional] 
+**properties** | [**dict(str, SchemaObject)**](SchemaObject.md) | Not used beacause our model does not support inline nested types | [optional] 
+**items** | [**SchemaObject**](SchemaObject.md) | if the schema is an array specifies the items type | [optional] 
+**example** | **object** | if the schema is an array specifies the items type | [optional] 
+**discriminator** | **str** |  | [optional] 
+**api_version** | **str** | The API version | [optional] 
+**swagger_version** | **str** | The Swagger version | [optional] 
+**base_path** | **str** | The base path | [optional] 
+**_resource_path** | **str** | The resource path hosted | [optional] 
+**models** | **dict(str, object)** | The models/schema for the API | [optional] 
+**consumes** | **list[str]** | The content types that the API consumes | [optional] 
+**produces** | **list[str]** | The content types that the API produces | [optional] 
+**authorizations** | [**dict(str, Authorization)**](Authorization.md) | The Authorization schemes provided for this API | [optional] 
+**name** | **str** | The name of the API | [optional] 
+**summary** | **str** | Brief summary of the API. | [optional] 
+**security_profile** | [**SwaggerSecurityProfile**](SwaggerSecurityProfile.md) | The security profile associated with the API | [optional] 
+**base_paths** | **list[str]** | Array of basePaths supported for this API/service, based on the configured ports | [optional] 
+**image** | **str** | API image URL | [optional] 
+**state** | **str** | The state of the API.  Possible values: &#39;pending&#39;, &#39;unpublished&#39;, or &#39;published&#39;. | [optional] 
+**cors** | **bool** | Indicates that the API is CORS enabled | [optional] [default to False]
+**expired** | **bool** | Indicates that the API is expired. | [optional] [default to False]
+**deprecated** | **bool** | Indicates that the API is deprecated.  If &#39;true&#39;, then the API may have a &#39;retirementDate&#39;. | [optional] [default to False]
+**retirement_date** | **int** | Indicates that the API is deprecated and will be retired on the supplied date (in milliseconds). | [optional] 
+**tags** | **dict(str, list[str])** | The list of tags associated with this API. Each tag can have multiple values | [optional] 
+**documentation_url** | **str** | The documentation URL for the operation | [optional] 
+**available_api_definitions** | **dict(str, str)** | The schema definitions that this API supports and links to those definitions. | [optional] 
+**available_sdk** | **dict(str, str)** | The SDK downloads that this API supports and links to those downloads. | [optional] 
+**apis** | [**list[API]**](API.md) | The API resources | [optional] 
+**ref** | **str** | A Reference to a definition on definitions object | [optional] 
+**default** | **object** | Default value for this schema if it is applicable | [optional] 
+**type** | **str** | The resource type. Possible values: &#39;rest&#39;, &#39;wsdl&#39; | [optional] 
+**enum** | **list[str]** |  | [optional] 
+
+[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+
+
