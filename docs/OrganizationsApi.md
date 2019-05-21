@@ -27,7 +27,7 @@ Method | HTTP request | Description
 
 List all organizations
 
-Get the list of organizations that are visible to the authenticated user.  Only API Administrators may list all organizations, all other users will see their organization.  The list of organizations can be filtered using the expression: field=__field__&op=__op__&value=__value__.  Optionally, you can add a logical operation for all expressions, using the form: &lop=AND|OR.  By default, the logical operation is AND.  Multiple expression filters can be used, specifying field, op, and value for each filter. The __field__ is one of:  apiid : Matches the organization if the organization is using the API, specified by ID  description : The organization's description  email : The organization's contact email address  enabled :  The enabled state of the organization, one of: enabled, disabled  createdOn : The date the organization was created on, time in ms, e.g.: 1372755998542  name : The name of the organization  phone : The organization's contact phone  The __op__ is an operation and is one of:  eq : Equal  ne : Not equal  gt :  Greater than  lt :  Less than  ge :  Greater than or equal  le :  Less than or equal  like : Like  gete :  Greater than or equal to, and less than or equal to; the __value__ should be a lower-minimum and upper-maximum separated by comma, e.g: value=5,10  The __value__ will be compared against the __field__, according to the supplied __op__. 
+Get the list of organizations that are visible to the authenticated user.  Only API Administrators may list all organizations, all other users will see their organization.  The list of organizations can be filtered using the expression: field=__field__&op=__op__&value=__value__.  Optionally, you can add a logical operation for all expressions, using the form: &lop=AND|OR.  By default, the logical operation is AND.  Multiple expression filters can be used, specifying field, op, and value for each filter. The __field__ is one of:  apiid : Matches the organization if the organization is using the API, specified by ID  description : The organization's description  email : The organization's contact email address  enabled :  The enabled state of the organization, one of: enabled, disabled  createdOn : The date the organization was created on, time in ms, e.g.: 1372755998542  name : The name of the organization  phone : The organization's contact phone  The __op__ is an operation and is one of:  eq : Equal  ne : Not equal  gt :  Greater than  lt :  Less than  ge :  Greater than or equal  le :  Less than or equal  like : Like  gele :  Greater than or equal to, and less than or equal to; the __value__ should be a lower-minimum and upper-maximum separated by comma, e.g: value=5,10  The __value__ will be compared against the __field__, according to the supplied __op__. 
 
 ### Example
 ```python
@@ -846,7 +846,7 @@ Name | Type | Description  | Notes
 
 Creates a new organization
 
-Creates a new organization.  Only API Administrators may create organizations.
+Creates a new organization.  Only API Administrators may create organizations. Data posted in this request may include custom properties defined in app.config
 
 ### Example
 ```python

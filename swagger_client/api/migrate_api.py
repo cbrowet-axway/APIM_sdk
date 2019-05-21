@@ -467,7 +467,7 @@ class MigrateApi(object):
         :param file file: The file containing application data to be imported (required)
         :param str organization_id: The Organization to associate the imported applications with. If applicable, for Core OAuth this parameter will be ignored (required)
         :param str user_id: The user to associate the applications with. Default is the API Admin (required)
-        :param str type: The type of application response required. THe only valid option is iframe - this is for ajax based calls that require an iFrame, i.e. Internet Explorer version prior to version 9. (required)
+        :param str type: This value should be unset (required)
         :param str password: Password to be used for decryption
         :return: None
                  If the method is called asynchronously,
@@ -493,7 +493,7 @@ class MigrateApi(object):
         :param file file: The file containing application data to be imported (required)
         :param str organization_id: The Organization to associate the imported applications with. If applicable, for Core OAuth this parameter will be ignored (required)
         :param str user_id: The user to associate the applications with. Default is the API Admin (required)
-        :param str type: The type of application response required. THe only valid option is iframe - this is for ajax based calls that require an iFrame, i.e. Internet Explorer version prior to version 9. (required)
+        :param str type: This value should be unset (required)
         :param str password: Password to be used for decryption
         :return: None
                  If the method is called asynchronously,

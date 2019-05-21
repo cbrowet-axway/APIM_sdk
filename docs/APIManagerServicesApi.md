@@ -8,6 +8,7 @@ Method | HTTP request | Description
 [**alerts_post**](APIManagerServicesApi.md#alerts_post) | **POST** /alerts | Updates the API Manager alerts configuration
 [**appinfo_get**](APIManagerServicesApi.md#appinfo_get) | **GET** /appinfo | Gets API Manager feature information.
 [**certinfo_post**](APIManagerServicesApi.md#certinfo_post) | **POST** /certinfo | Extracts certificate information from the supplied data
+[**config_customproperties_get**](APIManagerServicesApi.md#config_customproperties_get) | **GET** /config/customproperties | Gets API Manager custom property metadata
 [**config_get**](APIManagerServicesApi.md#config_get) | **GET** /config | Gets API Manager configuration
 [**config_put**](APIManagerServicesApi.md#config_put) | **PUT** /config | Updates the API Manager configuration
 [**connectors_connector_id_get**](APIManagerServicesApi.md#connectors_connector_id_get) | **GET** /connectors/{connectorId} | Return a list of APIs for the specified connector
@@ -232,6 +233,55 @@ void (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: multipart/form-data
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **config_customproperties_get**
+> CustomPropertiesConfig config_customproperties_get()
+
+Gets API Manager custom property metadata
+
+Returns an API Manager configuration object containing the metadata for the custom properties defined in the API Manager app.config.
+
+### Example
+```python
+from __future__ import print_function
+import time
+import swagger_client
+from swagger_client.rest import ApiException
+from pprint import pprint
+
+# Configure HTTP basic authorization: basic
+configuration = swagger_client.Configuration()
+configuration.username = 'YOUR_USERNAME'
+configuration.password = 'YOUR_PASSWORD'
+
+# create an instance of the API class
+api_instance = swagger_client.APIManagerServicesApi(swagger_client.ApiClient(configuration))
+
+try:
+    # Gets API Manager custom property metadata
+    api_response = api_instance.config_customproperties_get()
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling APIManagerServicesApi->config_customproperties_get: %s\n" % e)
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+[**CustomPropertiesConfig**](CustomPropertiesConfig.md)
+
+### Authorization
+
+[basic](../README.md#basic)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

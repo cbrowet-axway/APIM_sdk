@@ -57,6 +57,13 @@ class TestAPIProxyRegistrationApi(unittest.TestCase):
         """
         pass
 
+    def test_proxies_id_applications_get(self):
+        """Test case for proxies_id_applications_get
+
+        Gets a list of Applications that have been granted access to the specified frontend API.  # noqa: E501
+        """
+        pass
+
     def test_proxies_id_delete(self):
         """Test case for proxies_id_delete
 

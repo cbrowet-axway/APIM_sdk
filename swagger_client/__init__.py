@@ -52,6 +52,10 @@ from swagger_client.models.backend_method_export import BackendMethodExport
 from swagger_client.models.ca_cert import CACert
 from swagger_client.models.cors_profile import CORSProfile
 from swagger_client.models.config import Config
+from swagger_client.models.custom_properties_config import CustomPropertiesConfig
+from swagger_client.models.custom_property import CustomProperty
+from swagger_client.models.custom_property_option import CustomPropertyOption
+from swagger_client.models.custom_property_permission import CustomPropertyPermission
 from swagger_client.models.discovery_api import DiscoveryAPI
 from swagger_client.models.error_response import ErrorResponse
 from swagger_client.models.export_options import ExportOptions
@@ -67,6 +71,7 @@ from swagger_client.models.login_endpoint import LoginEndpoint
 from swagger_client.models.method import Method
 from swagger_client.models.metric_field import MetricField
 from swagger_client.models.metric_timeline import MetricTimeline
+from swagger_client.models.number import Number
 from swagger_client.models.o_auth_app_scope import OAuthAppScope
 from swagger_client.models.o_auth_client import OAuthClient
 from swagger_client.models.o_auth_protected_resource import OAuthProtectedResource

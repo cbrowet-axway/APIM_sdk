@@ -214,6 +214,9 @@ class VirtualizedAPI(object):
         :param organization_id: The organization_id of this VirtualizedAPI.  # noqa: E501
         :type: str
         """
+        if organization_id is None:
+            raise ValueError("Invalid value for `organization_id`, must not be `None`")  # noqa: E501
+
         self._organization_id = organization_id
 
     @property
@@ -286,6 +289,9 @@ class VirtualizedAPI(object):
         :param version: The version of this VirtualizedAPI.  # noqa: E501
         :type: str
         """
+        if version is None:
+            raise ValueError("Invalid value for `version`, must not be `None`")  # noqa: E501
+
         self._version = version
 
     @property
@@ -308,6 +314,9 @@ class VirtualizedAPI(object):
         :param api_routing_key: The api_routing_key of this VirtualizedAPI.  # noqa: E501
         :type: str
         """
+        if api_routing_key is None:
+            raise ValueError("Invalid value for `api_routing_key`, must not be `None`")  # noqa: E501
+
         self._api_routing_key = api_routing_key
 
     @property
@@ -330,6 +339,9 @@ class VirtualizedAPI(object):
         :param vhost: The vhost of this VirtualizedAPI.  # noqa: E501
         :type: str
         """
+        if vhost is None:
+            raise ValueError("Invalid value for `vhost`, must not be `None`")  # noqa: E501
+
         self._vhost = vhost
 
     @property
@@ -402,6 +414,9 @@ class VirtualizedAPI(object):
         :param description_manual: The description_manual of this VirtualizedAPI.  # noqa: E501
         :type: str
         """
+        if description_manual is None:
+            raise ValueError("Invalid value for `description_manual`, must not be `None`")  # noqa: E501
+
         self._description_manual = description_manual
 
     @property
@@ -424,6 +439,9 @@ class VirtualizedAPI(object):
         :param description_markdown: The description_markdown of this VirtualizedAPI.  # noqa: E501
         :type: str
         """
+        if description_markdown is None:
+            raise ValueError("Invalid value for `description_markdown`, must not be `None`")  # noqa: E501
+
         self._description_markdown = description_markdown
 
     @property
@@ -446,6 +464,9 @@ class VirtualizedAPI(object):
         :param description_url: The description_url of this VirtualizedAPI.  # noqa: E501
         :type: str
         """
+        if description_url is None:
+            raise ValueError("Invalid value for `description_url`, must not be `None`")  # noqa: E501
+
         self._description_url = description_url
 
     @property
@@ -468,6 +489,9 @@ class VirtualizedAPI(object):
         :param summary: The summary of this VirtualizedAPI.  # noqa: E501
         :type: str
         """
+        if summary is None:
+            raise ValueError("Invalid value for `summary`, must not be `None`")  # noqa: E501
+
         self._summary = summary
 
     @property
@@ -540,6 +564,9 @@ class VirtualizedAPI(object):
         :param image: The image of this VirtualizedAPI.  # noqa: E501
         :type: str
         """
+        if image is None:
+            raise ValueError("Invalid value for `image`, must not be `None`")  # noqa: E501
+
         self._image = image
 
     @property

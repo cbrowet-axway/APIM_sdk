@@ -57,6 +57,13 @@ class TestAPIManagerServicesApi(unittest.TestCase):
         """
         pass
 
+    def test_config_customproperties_get(self):
+        """Test case for config_customproperties_get
+
+        Gets API Manager custom property metadata  # noqa: E501
+        """
+        pass
+
     def test_config_get(self):
         """Test case for config_get
 

@@ -255,7 +255,7 @@ class APIProxyRegistrationApi(object):
     def proxies_get(self, **kwargs):  # noqa: E501
         """Queries a list of frontend API.  # noqa: E501
 
-        Returns a list of API that are visible to the authenticated user.  The list of API can be filtered using the expression: field=__field__&op=__op__&value=__value__.  Optionally, you can add a logical operation for all expressions, using the form: &lop=AND|OR.  By default, the logical operation is AND.  Multiple expression filters can be used, specifying field, op, and value for each filter. The __field__ is one of:  name :      The name of the API  apiid :      Matches the API if the API is virtualized from the specified backend API  createdOn :      The date the user was created on, time in ms, e.g.: 1372755998542  deprecated :      The deprecated state of the API, one of: true or false  retired :      The retired state of the API, one of: true or false  state :      The API's state, one of: unpublished, pending, or published  The __op__ is an operation and is one of:  eq :      Equal  ne :      Not equal  gt :      Greater than  lt :      Less than  ge :      Greater than or equal  le :      Less than or equal  like :      Like  gete :      Greater than or equal to, and less than or equal to; the __value__ should be a lower-minimum and upper-maximum separated by comma, e.g: value=5,10  The __value__ will be compared against the __field__, according to the supplied __op__.   # noqa: E501
+        Returns a list of API that are visible to the authenticated user.  The list of API can be filtered using the expression: field=__field__&op=__op__&value=__value__.  Optionally, you can add a logical operation for all expressions, using the form: &lop=AND|OR.  By default, the logical operation is AND.  Multiple expression filters can be used, specifying field, op, and value for each filter. The __field__ is one of:  name :      The name of the API  apiid :      Matches the API if the API is virtualized from the specified backend API  createdOn :      The date the virtualized API was created on, time in ms, e.g.: 1372755998542  deprecated :      The deprecated state of the API, one of: true or false  retired :      The retired state of the API, one of: true or false  state :      The API's state, one of: unpublished, pending, or published  path :      The path that services this virtualized API.  The __op__ is an operation and is one of:  eq :      Equal  ne :      Not equal  gt :      Greater than  lt :      Less than  ge :      Greater than or equal  le :      Less than or equal  like :      Like  gele :      Greater than or equal to, and less than or equal to; the __value__ should be a lower-minimum and upper-maximum separated by comma, e.g: value=5,10  The __value__ will be compared against the __field__, according to the supplied __op__.   # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.proxies_get(async_req=True)
@@ -279,7 +279,7 @@ class APIProxyRegistrationApi(object):
     def proxies_get_with_http_info(self, **kwargs):  # noqa: E501
         """Queries a list of frontend API.  # noqa: E501
 
-        Returns a list of API that are visible to the authenticated user.  The list of API can be filtered using the expression: field=__field__&op=__op__&value=__value__.  Optionally, you can add a logical operation for all expressions, using the form: &lop=AND|OR.  By default, the logical operation is AND.  Multiple expression filters can be used, specifying field, op, and value for each filter. The __field__ is one of:  name :      The name of the API  apiid :      Matches the API if the API is virtualized from the specified backend API  createdOn :      The date the user was created on, time in ms, e.g.: 1372755998542  deprecated :      The deprecated state of the API, one of: true or false  retired :      The retired state of the API, one of: true or false  state :      The API's state, one of: unpublished, pending, or published  The __op__ is an operation and is one of:  eq :      Equal  ne :      Not equal  gt :      Greater than  lt :      Less than  ge :      Greater than or equal  le :      Less than or equal  like :      Like  gete :      Greater than or equal to, and less than or equal to; the __value__ should be a lower-minimum and upper-maximum separated by comma, e.g: value=5,10  The __value__ will be compared against the __field__, according to the supplied __op__.   # noqa: E501
+        Returns a list of API that are visible to the authenticated user.  The list of API can be filtered using the expression: field=__field__&op=__op__&value=__value__.  Optionally, you can add a logical operation for all expressions, using the form: &lop=AND|OR.  By default, the logical operation is AND.  Multiple expression filters can be used, specifying field, op, and value for each filter. The __field__ is one of:  name :      The name of the API  apiid :      Matches the API if the API is virtualized from the specified backend API  createdOn :      The date the virtualized API was created on, time in ms, e.g.: 1372755998542  deprecated :      The deprecated state of the API, one of: true or false  retired :      The retired state of the API, one of: true or false  state :      The API's state, one of: unpublished, pending, or published  path :      The path that services this virtualized API.  The __op__ is an operation and is one of:  eq :      Equal  ne :      Not equal  gt :      Greater than  lt :      Less than  ge :      Greater than or equal  le :      Less than or equal  like :      Like  gele :      Greater than or equal to, and less than or equal to; the __value__ should be a lower-minimum and upper-maximum separated by comma, e.g: value=5,10  The __value__ will be compared against the __field__, according to the supplied __op__.   # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.proxies_get_with_http_info(async_req=True)
@@ -469,6 +469,101 @@ class APIProxyRegistrationApi(object):
             post_params=form_params,
             files=local_var_files,
             response_type=None,  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def proxies_id_applications_get(self, id, **kwargs):  # noqa: E501
+        """Gets a list of Applications that have been granted access to the specified frontend API.  # noqa: E501
+
+          # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.proxies_id_applications_get(id, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str id: The frontend API identifier. (required)
+        :return: list[Application]
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.proxies_id_applications_get_with_http_info(id, **kwargs)  # noqa: E501
+        else:
+            (data) = self.proxies_id_applications_get_with_http_info(id, **kwargs)  # noqa: E501
+            return data
+
+    def proxies_id_applications_get_with_http_info(self, id, **kwargs):  # noqa: E501
+        """Gets a list of Applications that have been granted access to the specified frontend API.  # noqa: E501
+
+          # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.proxies_id_applications_get_with_http_info(id, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str id: The frontend API identifier. (required)
+        :return: list[Application]
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['id']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method proxies_id_applications_get" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'id' is set
+        if ('id' not in params or
+                params['id'] is None):
+            raise ValueError("Missing the required parameter `id` when calling `proxies_id_applications_get`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+        if 'id' in params:
+            path_params['id'] = params['id']  # noqa: E501
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['basic']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/proxies/{id}/applications', 'GET',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='list[Application]',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -1501,7 +1596,7 @@ class APIProxyRegistrationApi(object):
     def proxies_id_put(self, id, body, **kwargs):  # noqa: E501
         """Updates an API proxy.  # noqa: E501
 
-          # noqa: E501
+        Updates an API proxy definition. Data in this request may include custom properties defined in app.config.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.proxies_id_put(id, body, async_req=True)
@@ -1524,7 +1619,7 @@ class APIProxyRegistrationApi(object):
     def proxies_id_put_with_http_info(self, id, body, **kwargs):  # noqa: E501
         """Updates an API proxy.  # noqa: E501
 
-          # noqa: E501
+        Updates an API proxy definition. Data in this request may include custom properties defined in app.config.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.proxies_id_put_with_http_info(id, body, async_req=True)

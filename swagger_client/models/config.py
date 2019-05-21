@@ -38,9 +38,13 @@ class Config(object):
         'is_api_portal_configured': 'bool',
         'registration_enabled': 'bool',
         'reset_password_enabled': 'bool',
+        'change_password_on_first_login': 'bool',
+        'password_expiry_enabled': 'bool',
+        'password_lifetime_days': 'int',
         'minimum_password_length': 'int',
         'auto_approve_user_registration': 'bool',
         'system_o_auth_scopes_enabled': 'bool',
+        'application_scope_restrictions': 'bool',
         'auto_approve_applications': 'bool',
         'delegate_user_administration': 'bool',
         'delegate_application_administration': 'bool',
@@ -55,6 +59,10 @@ class Config(object):
         'global_response_policy': 'str',
         'fault_handlers_enabled': 'bool',
         'global_fault_handler_policy': 'str',
+        'strict_certificate_checking': 'bool',
+        'server_certificate_verification': 'bool',
+        'advisory_banner_enabled': 'bool',
+        'advisory_banner_text': 'str',
         'base_o_auth': 'bool',
         'external_user_name': 'str',
         'external_user_description': 'str',
@@ -80,9 +88,13 @@ class Config(object):
         'is_api_portal_configured': 'isApiPortalConfigured',
         'registration_enabled': 'registrationEnabled',
         'reset_password_enabled': 'resetPasswordEnabled',
+        'change_password_on_first_login': 'changePasswordOnFirstLogin',
+        'password_expiry_enabled': 'passwordExpiryEnabled',
+        'password_lifetime_days': 'passwordLifetimeDays',
         'minimum_password_length': 'minimumPasswordLength',
         'auto_approve_user_registration': 'autoApproveUserRegistration',
         'system_o_auth_scopes_enabled': 'systemOAuthScopesEnabled',
+        'application_scope_restrictions': 'applicationScopeRestrictions',
         'auto_approve_applications': 'autoApproveApplications',
         'delegate_user_administration': 'delegateUserAdministration',
         'delegate_application_administration': 'delegateApplicationAdministration',
@@ -97,6 +109,10 @@ class Config(object):
         'global_response_policy': 'globalResponsePolicy',
         'fault_handlers_enabled': 'faultHandlersEnabled',
         'global_fault_handler_policy': 'globalFaultHandlerPolicy',
+        'strict_certificate_checking': 'strictCertificateChecking',
+        'server_certificate_verification': 'serverCertificateVerification',
+        'advisory_banner_enabled': 'advisoryBannerEnabled',
+        'advisory_banner_text': 'advisoryBannerText',
         'base_o_auth': 'baseOAuth',
         'external_user_name': 'externalUserName',
         'external_user_description': 'externalUserDescription',
@@ -114,7 +130,7 @@ class Config(object):
         'architecture': 'architecture'
     }
 
-    def __init__(self, portal_name=None, portal_hostname=None, api_portal_name=None, api_portal_hostname=None, is_api_portal_configured=False, registration_enabled=False, reset_password_enabled=False, minimum_password_length=None, auto_approve_user_registration=False, system_o_auth_scopes_enabled=False, auto_approve_applications=False, delegate_user_administration=False, delegate_application_administration=False, api_default_virtual_host=None, api_routing_key_enabled=False, api_routing_key_location=None, email_from=None, email_bounce_address=None, promote_api_via_policy=False, global_policies_enabled=False, global_request_policy=None, global_response_policy=None, fault_handlers_enabled=False, global_fault_handler_policy=None, base_o_auth=False, external_user_name=None, external_user_description=None, external_user_phone=None, external_user_email=None, external_user_organization=None, external_user_role=None, external_user_enabled=None, session_idle_timeout=None, is_trial=False, default_trial_duration=None, login_name_regex=None, product_version=None, os=None, architecture=None):  # noqa: E501
+    def __init__(self, portal_name=None, portal_hostname=None, api_portal_name=None, api_portal_hostname=None, is_api_portal_configured=False, registration_enabled=False, reset_password_enabled=False, change_password_on_first_login=False, password_expiry_enabled=False, password_lifetime_days=None, minimum_password_length=None, auto_approve_user_registration=False, system_o_auth_scopes_enabled=False, application_scope_restrictions=False, auto_approve_applications=False, delegate_user_administration=False, delegate_application_administration=False, api_default_virtual_host=None, api_routing_key_enabled=False, api_routing_key_location=None, email_from=None, email_bounce_address=None, promote_api_via_policy=False, global_policies_enabled=False, global_request_policy=None, global_response_policy=None, fault_handlers_enabled=False, global_fault_handler_policy=None, strict_certificate_checking=False, server_certificate_verification=False, advisory_banner_enabled=False, advisory_banner_text=None, base_o_auth=False, external_user_name=None, external_user_description=None, external_user_phone=None, external_user_email=None, external_user_organization=None, external_user_role=None, external_user_enabled=None, session_idle_timeout=None, is_trial=False, default_trial_duration=None, login_name_regex=None, product_version=None, os=None, architecture=None):  # noqa: E501
         """Config - a model defined in Swagger"""  # noqa: E501
 
         self._portal_name = None
@@ -124,9 +140,13 @@ class Config(object):
         self._is_api_portal_configured = None
         self._registration_enabled = None
         self._reset_password_enabled = None
+        self._change_password_on_first_login = None
+        self._password_expiry_enabled = None
+        self._password_lifetime_days = None
         self._minimum_password_length = None
         self._auto_approve_user_registration = None
         self._system_o_auth_scopes_enabled = None
+        self._application_scope_restrictions = None
         self._auto_approve_applications = None
         self._delegate_user_administration = None
         self._delegate_application_administration = None
@@ -141,6 +161,10 @@ class Config(object):
         self._global_response_policy = None
         self._fault_handlers_enabled = None
         self._global_fault_handler_policy = None
+        self._strict_certificate_checking = None
+        self._server_certificate_verification = None
+        self._advisory_banner_enabled = None
+        self._advisory_banner_text = None
         self._base_o_auth = None
         self._external_user_name = None
         self._external_user_description = None
@@ -172,12 +196,20 @@ class Config(object):
             self.registration_enabled = registration_enabled
         if reset_password_enabled is not None:
             self.reset_password_enabled = reset_password_enabled
+        if change_password_on_first_login is not None:
+            self.change_password_on_first_login = change_password_on_first_login
+        if password_expiry_enabled is not None:
+            self.password_expiry_enabled = password_expiry_enabled
+        if password_lifetime_days is not None:
+            self.password_lifetime_days = password_lifetime_days
         if minimum_password_length is not None:
             self.minimum_password_length = minimum_password_length
         if auto_approve_user_registration is not None:
             self.auto_approve_user_registration = auto_approve_user_registration
         if system_o_auth_scopes_enabled is not None:
             self.system_o_auth_scopes_enabled = system_o_auth_scopes_enabled
+        if application_scope_restrictions is not None:
+            self.application_scope_restrictions = application_scope_restrictions
         if auto_approve_applications is not None:
             self.auto_approve_applications = auto_approve_applications
         if delegate_user_administration is not None:
@@ -206,6 +238,14 @@ class Config(object):
             self.fault_handlers_enabled = fault_handlers_enabled
         if global_fault_handler_policy is not None:
             self.global_fault_handler_policy = global_fault_handler_policy
+        if strict_certificate_checking is not None:
+            self.strict_certificate_checking = strict_certificate_checking
+        if server_certificate_verification is not None:
+            self.server_certificate_verification = server_certificate_verification
+        if advisory_banner_enabled is not None:
+            self.advisory_banner_enabled = advisory_banner_enabled
+        if advisory_banner_text is not None:
+            self.advisory_banner_text = advisory_banner_text
         if base_o_auth is not None:
             self.base_o_auth = base_o_auth
         if external_user_name is not None:
@@ -378,7 +418,7 @@ class Config(object):
     def reset_password_enabled(self):
         """Gets the reset_password_enabled of this Config.  # noqa: E501
 
-        Enables/disables spport for resetting user passwords for the API Manager  # noqa: E501
+        Enables/disables support for resetting user passwords for the API Manager  # noqa: E501
 
         :return: The reset_password_enabled of this Config.  # noqa: E501
         :rtype: bool
@@ -389,13 +429,82 @@ class Config(object):
     def reset_password_enabled(self, reset_password_enabled):
         """Sets the reset_password_enabled of this Config.
 
-        Enables/disables spport for resetting user passwords for the API Manager  # noqa: E501
+        Enables/disables support for resetting user passwords for the API Manager  # noqa: E501
 
         :param reset_password_enabled: The reset_password_enabled of this Config.  # noqa: E501
         :type: bool
         """
 
         self._reset_password_enabled = reset_password_enabled
+
+    @property
+    def change_password_on_first_login(self):
+        """Gets the change_password_on_first_login of this Config.  # noqa: E501
+
+        Enables/disables support for changing user passwords on first login for the API Manager  # noqa: E501
+
+        :return: The change_password_on_first_login of this Config.  # noqa: E501
+        :rtype: bool
+        """
+        return self._change_password_on_first_login
+
+    @change_password_on_first_login.setter
+    def change_password_on_first_login(self, change_password_on_first_login):
+        """Sets the change_password_on_first_login of this Config.
+
+        Enables/disables support for changing user passwords on first login for the API Manager  # noqa: E501
+
+        :param change_password_on_first_login: The change_password_on_first_login of this Config.  # noqa: E501
+        :type: bool
+        """
+
+        self._change_password_on_first_login = change_password_on_first_login
+
+    @property
+    def password_expiry_enabled(self):
+        """Gets the password_expiry_enabled of this Config.  # noqa: E501
+
+        Enables/disables support for user passwords expiration for the API Manager  # noqa: E501
+
+        :return: The password_expiry_enabled of this Config.  # noqa: E501
+        :rtype: bool
+        """
+        return self._password_expiry_enabled
+
+    @password_expiry_enabled.setter
+    def password_expiry_enabled(self, password_expiry_enabled):
+        """Sets the password_expiry_enabled of this Config.
+
+        Enables/disables support for user passwords expiration for the API Manager  # noqa: E501
+
+        :param password_expiry_enabled: The password_expiry_enabled of this Config.  # noqa: E501
+        :type: bool
+        """
+
+        self._password_expiry_enabled = password_expiry_enabled
+
+    @property
+    def password_lifetime_days(self):
+        """Gets the password_lifetime_days of this Config.  # noqa: E501
+
+        The number of days before user passwords expire for the API Manager  # noqa: E501
+
+        :return: The password_lifetime_days of this Config.  # noqa: E501
+        :rtype: int
+        """
+        return self._password_lifetime_days
+
+    @password_lifetime_days.setter
+    def password_lifetime_days(self, password_lifetime_days):
+        """Sets the password_lifetime_days of this Config.
+
+        The number of days before user passwords expire for the API Manager  # noqa: E501
+
+        :param password_lifetime_days: The password_lifetime_days of this Config.  # noqa: E501
+        :type: int
+        """
+
+        self._password_lifetime_days = password_lifetime_days
 
     @property
     def minimum_password_length(self):
@@ -465,6 +574,29 @@ class Config(object):
         """
 
         self._system_o_auth_scopes_enabled = system_o_auth_scopes_enabled
+
+    @property
+    def application_scope_restrictions(self):
+        """Gets the application_scope_restrictions of this Config.  # noqa: E501
+
+        Enables/disables the ability to show Application default enabled scopes only.  # noqa: E501
+
+        :return: The application_scope_restrictions of this Config.  # noqa: E501
+        :rtype: bool
+        """
+        return self._application_scope_restrictions
+
+    @application_scope_restrictions.setter
+    def application_scope_restrictions(self, application_scope_restrictions):
+        """Sets the application_scope_restrictions of this Config.
+
+        Enables/disables the ability to show Application default enabled scopes only.  # noqa: E501
+
+        :param application_scope_restrictions: The application_scope_restrictions of this Config.  # noqa: E501
+        :type: bool
+        """
+
+        self._application_scope_restrictions = application_scope_restrictions
 
     @property
     def auto_approve_applications(self):
@@ -787,6 +919,98 @@ class Config(object):
         """
 
         self._global_fault_handler_policy = global_fault_handler_policy
+
+    @property
+    def strict_certificate_checking(self):
+        """Gets the strict_certificate_checking of this Config.  # noqa: E501
+
+        For API import, strict certificate checking will only allow recognised, valid server certificates when performing API imports from SSL protected endpoints. Default is set to true  # noqa: E501
+
+        :return: The strict_certificate_checking of this Config.  # noqa: E501
+        :rtype: bool
+        """
+        return self._strict_certificate_checking
+
+    @strict_certificate_checking.setter
+    def strict_certificate_checking(self, strict_certificate_checking):
+        """Sets the strict_certificate_checking of this Config.
+
+        For API import, strict certificate checking will only allow recognised, valid server certificates when performing API imports from SSL protected endpoints. Default is set to true  # noqa: E501
+
+        :param strict_certificate_checking: The strict_certificate_checking of this Config.  # noqa: E501
+        :type: bool
+        """
+
+        self._strict_certificate_checking = strict_certificate_checking
+
+    @property
+    def server_certificate_verification(self):
+        """Gets the server_certificate_verification of this Config.  # noqa: E501
+
+        Fr API import, server certificate verification ensures that the certificate presented by the server matches the name of the remote host being connected to. Default is set to true  # noqa: E501
+
+        :return: The server_certificate_verification of this Config.  # noqa: E501
+        :rtype: bool
+        """
+        return self._server_certificate_verification
+
+    @server_certificate_verification.setter
+    def server_certificate_verification(self, server_certificate_verification):
+        """Sets the server_certificate_verification of this Config.
+
+        Fr API import, server certificate verification ensures that the certificate presented by the server matches the name of the remote host being connected to. Default is set to true  # noqa: E501
+
+        :param server_certificate_verification: The server_certificate_verification of this Config.  # noqa: E501
+        :type: bool
+        """
+
+        self._server_certificate_verification = server_certificate_verification
+
+    @property
+    def advisory_banner_enabled(self):
+        """Gets the advisory_banner_enabled of this Config.  # noqa: E501
+
+        Enables/disables API Manager advisory banner.  # noqa: E501
+
+        :return: The advisory_banner_enabled of this Config.  # noqa: E501
+        :rtype: bool
+        """
+        return self._advisory_banner_enabled
+
+    @advisory_banner_enabled.setter
+    def advisory_banner_enabled(self, advisory_banner_enabled):
+        """Sets the advisory_banner_enabled of this Config.
+
+        Enables/disables API Manager advisory banner.  # noqa: E501
+
+        :param advisory_banner_enabled: The advisory_banner_enabled of this Config.  # noqa: E501
+        :type: bool
+        """
+
+        self._advisory_banner_enabled = advisory_banner_enabled
+
+    @property
+    def advisory_banner_text(self):
+        """Gets the advisory_banner_text of this Config.  # noqa: E501
+
+        Advisory banner text.  # noqa: E501
+
+        :return: The advisory_banner_text of this Config.  # noqa: E501
+        :rtype: str
+        """
+        return self._advisory_banner_text
+
+    @advisory_banner_text.setter
+    def advisory_banner_text(self, advisory_banner_text):
+        """Sets the advisory_banner_text of this Config.
+
+        Advisory banner text.  # noqa: E501
+
+        :param advisory_banner_text: The advisory_banner_text of this Config.  # noqa: E501
+        :type: str
+        """
+
+        self._advisory_banner_text = advisory_banner_text
 
     @property
     def base_o_auth(self):

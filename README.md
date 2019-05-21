@@ -87,6 +87,7 @@ Class | Method | HTTP request | Description
 *APIManagerServicesApi* | [**alerts_post**](docs/APIManagerServicesApi.md#alerts_post) | **POST** /alerts | Updates the API Manager alerts configuration
 *APIManagerServicesApi* | [**appinfo_get**](docs/APIManagerServicesApi.md#appinfo_get) | **GET** /appinfo | Gets API Manager feature information.
 *APIManagerServicesApi* | [**certinfo_post**](docs/APIManagerServicesApi.md#certinfo_post) | **POST** /certinfo | Extracts certificate information from the supplied data
+*APIManagerServicesApi* | [**config_customproperties_get**](docs/APIManagerServicesApi.md#config_customproperties_get) | **GET** /config/customproperties | Gets API Manager custom property metadata
 *APIManagerServicesApi* | [**config_get**](docs/APIManagerServicesApi.md#config_get) | **GET** /config | Gets API Manager configuration
 *APIManagerServicesApi* | [**config_put**](docs/APIManagerServicesApi.md#config_put) | **PUT** /config | Updates the API Manager configuration
 *APIManagerServicesApi* | [**connectors_connector_id_get**](docs/APIManagerServicesApi.md#connectors_connector_id_get) | **GET** /connectors/{connectorId} | Return a list of APIs for the specified connector
@@ -111,6 +112,7 @@ Class | Method | HTTP request | Description
 *APIProxyRegistrationApi* | [**proxies_export_post**](docs/APIProxyRegistrationApi.md#proxies_export_post) | **POST** /proxies/export | Creates an API export.
 *APIProxyRegistrationApi* | [**proxies_get**](docs/APIProxyRegistrationApi.md#proxies_get) | **GET** /proxies | Queries a list of frontend API.
 *APIProxyRegistrationApi* | [**proxies_grantaccess_post**](docs/APIProxyRegistrationApi.md#proxies_grantaccess_post) | **POST** /proxies/grantaccess | Macro function to grant API access.
+*APIProxyRegistrationApi* | [**proxies_id_applications_get**](docs/APIProxyRegistrationApi.md#proxies_id_applications_get) | **GET** /proxies/{id}/applications | Gets a list of Applications that have been granted access to the specified frontend API.
 *APIProxyRegistrationApi* | [**proxies_id_delete**](docs/APIProxyRegistrationApi.md#proxies_id_delete) | **DELETE** /proxies/{id} | Deletes an API proxy.
 *APIProxyRegistrationApi* | [**proxies_id_deprecate_post**](docs/APIProxyRegistrationApi.md#proxies_id_deprecate_post) | **POST** /proxies/{id}/deprecate | Deprecates the API.
 *APIProxyRegistrationApi* | [**proxies_id_get**](docs/APIProxyRegistrationApi.md#proxies_id_get) | **GET** /proxies/{id} | Gets a frontend API by ID.
@@ -261,6 +263,10 @@ Class | Method | HTTP request | Description
  - [CACert](docs/CACert.md)
  - [CORSProfile](docs/CORSProfile.md)
  - [Config](docs/Config.md)
+ - [CustomPropertiesConfig](docs/CustomPropertiesConfig.md)
+ - [CustomProperty](docs/CustomProperty.md)
+ - [CustomPropertyOption](docs/CustomPropertyOption.md)
+ - [CustomPropertyPermission](docs/CustomPropertyPermission.md)
  - [DiscoveryAPI](docs/DiscoveryAPI.md)
  - [ErrorResponse](docs/ErrorResponse.md)
  - [ExportOptions](docs/ExportOptions.md)
@@ -276,6 +282,7 @@ Class | Method | HTTP request | Description
  - [Method](docs/Method.md)
  - [MetricField](docs/MetricField.md)
  - [MetricTimeline](docs/MetricTimeline.md)
+ - [Number](docs/Number.md)
  - [OAuthAppScope](docs/OAuthAppScope.md)
  - [OAuthClient](docs/OAuthClient.md)
  - [OAuthProtectedResource](docs/OAuthProtectedResource.md)

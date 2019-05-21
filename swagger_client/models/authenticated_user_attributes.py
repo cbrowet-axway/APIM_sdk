@@ -33,21 +33,30 @@ class AuthenticatedUserAttributes(object):
     swagger_types = {
         'first_login': 'bool',
         'is_sso_login': 'bool',
-        'user_dn': 'str'
+        'user_dn': 'str',
+        'last_seen': 'int',
+        'change_password': 'bool',
+        'change_password_message': 'str'
     }
 
     attribute_map = {
         'first_login': 'firstLogin',
         'is_sso_login': 'isSSOLogin',
-        'user_dn': 'userDn'
+        'user_dn': 'userDn',
+        'last_seen': 'lastSeen',
+        'change_password': 'changePassword',
+        'change_password_message': 'changePasswordMessage'
     }
 
-    def __init__(self, first_login=False, is_sso_login=False, user_dn=None):  # noqa: E501
+    def __init__(self, first_login=False, is_sso_login=False, user_dn=None, last_seen=None, change_password=False, change_password_message=None):  # noqa: E501
         """AuthenticatedUserAttributes - a model defined in Swagger"""  # noqa: E501
 
         self._first_login = None
         self._is_sso_login = None
         self._user_dn = None
+        self._last_seen = None
+        self._change_password = None
+        self._change_password_message = None
         self.discriminator = None
 
         if first_login is not None:
@@ -56,6 +65,12 @@ class AuthenticatedUserAttributes(object):
             self.is_sso_login = is_sso_login
         if user_dn is not None:
             self.user_dn = user_dn
+        if last_seen is not None:
+            self.last_seen = last_seen
+        if change_password is not None:
+            self.change_password = change_password
+        if change_password_message is not None:
+            self.change_password_message = change_password_message
 
     @property
     def first_login(self):
@@ -119,6 +134,69 @@ class AuthenticatedUserAttributes(object):
         """
 
         self._user_dn = user_dn
+
+    @property
+    def last_seen(self):
+        """Gets the last_seen of this AuthenticatedUserAttributes.  # noqa: E501
+
+
+        :return: The last_seen of this AuthenticatedUserAttributes.  # noqa: E501
+        :rtype: int
+        """
+        return self._last_seen
+
+    @last_seen.setter
+    def last_seen(self, last_seen):
+        """Sets the last_seen of this AuthenticatedUserAttributes.
+
+
+        :param last_seen: The last_seen of this AuthenticatedUserAttributes.  # noqa: E501
+        :type: int
+        """
+
+        self._last_seen = last_seen
+
+    @property
+    def change_password(self):
+        """Gets the change_password of this AuthenticatedUserAttributes.  # noqa: E501
+
+
+        :return: The change_password of this AuthenticatedUserAttributes.  # noqa: E501
+        :rtype: bool
+        """
+        return self._change_password
+
+    @change_password.setter
+    def change_password(self, change_password):
+        """Sets the change_password of this AuthenticatedUserAttributes.
+
+
+        :param change_password: The change_password of this AuthenticatedUserAttributes.  # noqa: E501
+        :type: bool
+        """
+
+        self._change_password = change_password
+
+    @property
+    def change_password_message(self):
+        """Gets the change_password_message of this AuthenticatedUserAttributes.  # noqa: E501
+
+
+        :return: The change_password_message of this AuthenticatedUserAttributes.  # noqa: E501
+        :rtype: str
+        """
+        return self._change_password_message
+
+    @change_password_message.setter
+    def change_password_message(self, change_password_message):
+        """Sets the change_password_message of this AuthenticatedUserAttributes.
+
+
+        :param change_password_message: The change_password_message of this AuthenticatedUserAttributes.  # noqa: E501
+        :type: str
+        """
+
+        self._change_password_message = change_password_message
 
     def to_dict(self):
         """Returns the model properties as a dict"""

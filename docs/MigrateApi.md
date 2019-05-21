@@ -254,7 +254,7 @@ api_instance = swagger_client.MigrateApi(swagger_client.ApiClient(configuration)
 file = '/path/to/file.txt' # file | The file containing application data to be imported
 organization_id = 'organization_id_example' # str | The Organization to associate the imported applications with. If applicable, for Core OAuth this parameter will be ignored
 user_id = 'user_id_example' # str | The user to associate the applications with. Default is the API Admin
-type = 'type_example' # str | The type of application response required. THe only valid option is iframe - this is for ajax based calls that require an iFrame, i.e. Internet Explorer version prior to version 9.
+type = 'type_example' # str | This value should be unset
 password = 'password_example' # str | Password to be used for decryption (optional)
 
 try:
@@ -271,7 +271,7 @@ Name | Type | Description  | Notes
  **file** | **file**| The file containing application data to be imported | 
  **organization_id** | **str**| The Organization to associate the imported applications with. If applicable, for Core OAuth this parameter will be ignored | 
  **user_id** | **str**| The user to associate the applications with. Default is the API Admin | 
- **type** | **str**| The type of application response required. THe only valid option is iframe - this is for ajax based calls that require an iFrame, i.e. Internet Explorer version prior to version 9. | 
+ **type** | **str**| This value should be unset | 
  **password** | **str**| Password to be used for decryption | [optional] 
 
 ### Return type

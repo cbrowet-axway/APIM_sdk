@@ -12,7 +12,7 @@ Method | HTTP request | Description
 
 
 # **quotas_get**
-> QuotaDTO quotas_get()
+> list[QuotaDTO] quotas_get()
 
 Returns all quotas
 
@@ -47,7 +47,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**QuotaDTO**](QuotaDTO.md)
+[**list[QuotaDTO]**](QuotaDTO.md)
 
 ### Authorization
 

@@ -35,21 +35,24 @@ class ResponseCode(object):
     swagger_types = {
         'code': 'int',
         'message': 'str',
-        'schema': 'SchemaObject'
+        'schema': 'SchemaObject',
+        'headers': 'dict(str, SchemaObject)'
     }
 
     attribute_map = {
         'code': 'code',
         'message': 'message',
-        'schema': 'schema'
+        'schema': 'schema',
+        'headers': 'headers'
     }
 
-    def __init__(self, code=None, message=None, schema=None):  # noqa: E501
+    def __init__(self, code=None, message=None, schema=None, headers=None):  # noqa: E501
         """ResponseCode - a model defined in Swagger"""  # noqa: E501
 
         self._code = None
         self._message = None
         self._schema = None
+        self._headers = None
         self.discriminator = None
 
         if code is not None:
@@ -58,6 +61,8 @@ class ResponseCode(object):
             self.message = message
         if schema is not None:
             self.schema = schema
+        if headers is not None:
+            self.headers = headers
 
     @property
     def code(self):
@@ -127,6 +132,27 @@ class ResponseCode(object):
         """
 
         self._schema = schema
+
+    @property
+    def headers(self):
+        """Gets the headers of this ResponseCode.  # noqa: E501
+
+
+        :return: The headers of this ResponseCode.  # noqa: E501
+        :rtype: dict(str, SchemaObject)
+        """
+        return self._headers
+
+    @headers.setter
+    def headers(self, headers):
+        """Sets the headers of this ResponseCode.
+
+
+        :param headers: The headers of this ResponseCode.  # noqa: E501
+        :type: dict(str, SchemaObject)
+        """
+
+        self._headers = headers
 
     def to_dict(self):
         """Returns the model properties as a dict"""
