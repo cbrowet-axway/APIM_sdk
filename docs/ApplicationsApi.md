@@ -1959,7 +1959,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **applications_id_quota_get**
-> list[QuotaDTO] applications_id_quota_get(id)
+> QuotaDTO applications_id_quota_get(id)
 
 Returns the quota associated with an application.
 
@@ -1998,7 +1998,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**list[QuotaDTO]**](QuotaDTO.md)
+[**QuotaDTO**](QuotaDTO.md)
 
 ### Authorization
 
