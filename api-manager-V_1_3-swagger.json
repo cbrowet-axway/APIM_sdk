@@ -10,7 +10,7 @@
       "name" : "Copyright Axway 2019. All rights reserved."
     }
   },
-  "host": "{{apimgr_host}}",
+  "host": "localhost",
   "schemes": [
     "https",
     "http"
@@ -5557,14 +5557,20 @@
         "produces" : [ "application/json" ],
         "parameters" : [ ],
         "responses" : {
+          "200" : {
+            "description" : "OK",
+            "schema" : {
+              "type" : "array",
+              "items" : {
+                "$ref" : "#/definitions/QuotaDTO"
+              }
+            }
+          },
           "500" : {
             "description" : "Internal Server Error"
           },
           "204" : {
-            "description" : "No Content",
-            "schema" : {
-              "$ref" : "#/definitions/QuotaDTO"
-            }
+            "description" : "No Content"
           },
           "404" : {
             "description" : "Not Found"
