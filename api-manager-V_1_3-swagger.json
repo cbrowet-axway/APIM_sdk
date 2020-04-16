@@ -3888,6 +3888,12 @@
           }
         } ],
         "responses" : {
+          "200" : {
+            "description" : "OK",
+            "schema" : {
+              "type" : "string"
+            }
+          },
           "500" : {
             "description" : "Internal Server Error"
           },
