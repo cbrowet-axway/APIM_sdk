@@ -116,7 +116,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **migrate_applications_export_json_post**
-> migrate_applications_export_json_post(body)
+> str migrate_applications_export_json_post(body)
 
 Creates an export of applications based on the export options posted as a JSON object
 
@@ -141,7 +141,8 @@ body = swagger_client.ExportOptions() # ExportOptions | Export options
 
 try:
     # Creates an export of applications based on the export options posted as a JSON object
-    api_instance.migrate_applications_export_json_post(body)
+    api_response = api_instance.migrate_applications_export_json_post(body)
+    pprint(api_response)
 except ApiException as e:
     print("Exception when calling MigrateApi->migrate_applications_export_json_post: %s\n" % e)
 ```
@@ -154,7 +155,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-void (empty response body)
+**str**
 
 ### Authorization
 
